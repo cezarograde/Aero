@@ -1,9 +1,19 @@
 #include "lista.h"
 #include "fila.h"
 
-void insere(aviao **inicio,char codigo[7],int numero_p, char capitao[20]){
+void insere(aviao **lista,char codigo[7],int numero_p, char capitao[20]){
+	aviao *p, *inicio;
+	if((*lista)==NULL){
+		p=criar_aviao(codigo,numero_p,capitao);
+		(*lista)=inicio=p;
+	}else{
+		p=criar_aviao(codigo,numero_p,capitao);
+		(*lista)->prox=p;
+	
+	}
+}
 
-}//CESAR
+}//CEZAR
 
 aviao* criar_aviao(char codigo[7],int numero_p, char capitao[20]){
 
@@ -20,7 +30,7 @@ void check_lista(aviao **aviao, char codigo[7]){
         }
     }
     if(booleano == 0){
-        printf("CODIGO N√O ENCONTRADO!\n");
+        printf("CODIGO N√ÉO ENCONTRADO!\n");
     }
 }//JOAO C
 
